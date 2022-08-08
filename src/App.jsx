@@ -3,18 +3,18 @@ import { TodoList } from "./components/TodoList"
 import { InputTodo } from "./components/InputTodo"
 
 function App() {
-  const [inCompleteTodos, setIncompleteTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   return (
-    <>
+    <div className="todoapp">
       <InputTodo
-        setIncompleteTodo={setIncompleteTodo}
-      ></InputTodo>
+        setTodos={setTodos}
+      />
       <TodoList
-        inCompleteTodos={inCompleteTodos}
-        setIncompleteTodo={setIncompleteTodo}
-      ></TodoList>
-    </>
+        todos={todos}
+        setTodos={setTodos}
+      />
+    </div>
   );
 }
 

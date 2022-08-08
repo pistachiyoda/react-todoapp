@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export const InputTodo = (props) => {
-    const { setIncompleteTodo }  = props;
+    const { setTodos }  = props;
     const [inputText, setInputText] = useState("");
 
     const onChangeTodoText = (event) => {
@@ -10,7 +10,7 @@ export const InputTodo = (props) => {
 
     const onSubmitTodoText = (event) => {
         event.preventDefault();
-        setIncompleteTodo(oldInCompleteTodos => [...oldInCompleteTodos, inputText]);
+        setTodos(oldtodos => [...oldtodos, inputText]);
         setInputText("");
     }
 

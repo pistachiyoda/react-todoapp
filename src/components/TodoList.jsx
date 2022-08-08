@@ -1,27 +1,27 @@
 import React from "react";
-import { TodoItems } from "./TodoItems"
+import { TodoItem } from "./TodoItem"
 
 export const TodoList = (props) => {
-    const { inCompleteTodos, setIncompleteTodo } = props;
+    const { todos, setTodos } = props;
 
     return (
         <>
             <div id="js-todo-list" className="todo-list">
                 <ul>
-                    {inCompleteTodos.map((todo, index) => {
-                            return <TodoItems
+                    {todos.map((todo, index) => {
+                            return <TodoItem
                                 key={index}
                                 todo={todo}
                                 index={index}
-                                inCompleteTodos={inCompleteTodos}
-                                setIncompleteTodo={setIncompleteTodo}
-                            ></TodoItems>
+                                todos={todos}
+                                setTodos={setTodos}
+                            ></TodoItem>
                     })
                     }
                 </ul>
             </div>
             <footer className="footer">
-                <span id="js-todo-count">Todoアイテム数: {inCompleteTodos.length}個</span>
+                <span id="js-todo-count">Todoアイテム数: {todos.length}個</span>
             </footer>
         </>
     )
